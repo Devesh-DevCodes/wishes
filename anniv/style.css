@@ -1,0 +1,159 @@
+/* Global styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #dbf3f5;
+    position: relative;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  .Maincard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(139deg, #f3c5f3, #88f5f5, #de89f8);
+    box-shadow: 2px 2px 6px 2px #008075;
+    padding-bottom: 50px;
+  }
+  
+  h1 {
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 2px 2px 3px red;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .img {
+    height: 260px;
+    width: 300px;
+    border: 5px double #e40981;
+    box-shadow: 2px 2px 3px #705a5e;
+    border-radius: 10%;
+  }
+  
+  #img-cont,
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer {
+    flex-direction: column;
+  }
+  
+  #myimg {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: 4px solid #67096d;
+    box-shadow: 2px 2px 6px 0px #b012d1;
+  }
+  
+  .bottom {
+    border-top: 2px solid white;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color: #444;
+  }
+  
+  /* Falling Hearts */
+  .heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    color: #ff4f9c;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Popup styling */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff0f7;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e91e63;
+    z-index: 10;
+    animation: popupFade 1s ease-in-out forwards;
+  }
+  
+  @keyframes popupFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Typewriter Effect */
+  .typewriter {
+    color: #b10080;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #b10080;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #b10080;
+    }
+  }
+  
+  /* Popup animation for appearing (pop-in) */
+  .popup-animation-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  /* Popup animation for disappearing (pop-out) */
+  .popup-animation-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  
